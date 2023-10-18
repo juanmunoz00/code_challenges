@@ -10,6 +10,8 @@ class Challenges:
   https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
   """
   def reverse_string(self, string):
+    if not isinstance(string, str):
+      return "Input is not a string"
     # Create an empty list named reversed. The list will be used to store the characters of the input string in reverse order.
     reversed = []
     
