@@ -1,7 +1,7 @@
 """
 #1 Reverse_String
 
-Last update: Oct. 2023
+Last update: Oct - 18 - 2023
 
 Description:
 Reverse a given string.
@@ -14,10 +14,23 @@ https://www.udemy.com/course/master-the-coding-interview-data-structures-algorit
 """
 #2 Merge_Sorted_Arrays
 
-Last update: Oct. 2023
+Last update: Oct - 18 - 2023
 
 Description:
 Two lists of sorted integers are given. Merge the two lists and keep the sorting.
+
+Challenge from the 
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+"""
+
+"""
+#3 Find_Recurring_Character
+
+Last update: Oct - 18 - 2023
+
+Description:
+Given a list, find the 1st recurring element.
 
 Challenge from the 
 Master the Coding Interview: Data Structures + Algorithms
