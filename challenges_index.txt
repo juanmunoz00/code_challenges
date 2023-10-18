@@ -1,0 +1,11 @@
+"""
+Reverse_String
+
+Last update: Oct. 2023
+
+Description:
+Challenge from the 
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+"""
+
