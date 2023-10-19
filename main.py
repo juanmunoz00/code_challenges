@@ -32,5 +32,8 @@ if ( runChallenge == 3 ):
 
 
 if ( runChallenge == 4 ):
-  Challenges.Factorial_Of_A_Number(random.randint(0,9), int(Challenges.USE_FACTORIAL_WITH_LOOPS))
-  #Challenges.Factorial_Of_A_Number(6, Challenges.Factorial_With_Recurssion)
+  #USE_FACTORIAL_WITH_LOOPS
+  #USE_FACTORIAL_WITH_RECURSSION
+  number = random.randint(1,20)
+  Challenges.Factorial_Of_A_Number(number, int(Challenges.USE_FACTORIAL_WITH_LOOPS))
+  #Challenges.Factorial_Of_A_Number(number, int(Challenges.USE_FACTORIAL_WITH_RECURSSION))
