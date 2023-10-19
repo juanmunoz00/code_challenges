@@ -6,6 +6,10 @@ class Challenges:
   REVERSE_STRING = 1
   MERGED_SORTED_ARRAY = 2
   FIND_RECURRING_CHARACTER = 3
+  FACTORIAL_OF_A_NUMBER = 4
+  
+  USE_FACTORIAL_WITH_LOOPS = 1
+  USE_FACTORIAL_WITH_RECURSSION = 2
   
   def Reverse_String(self, string):
     # TODO: Lists validations
@@ -61,7 +65,31 @@ class Challenges:
           listDictionary[n] = str(n)
       print(f'(Undefined) There is no recurring character in the list.'	)  
     except Exception as e: print(e)
-  
 
+  def Factorial_Of_A_Number(self, number, fx):
+    #print('In Factorial_Of_A_Number. Number is: ' + str(number) + ' Fx is: ' + str(fx))
+    if ( number > 0 and fx == self.USE_FACTORIAL_WITH_LOOPS ):
+      self.Factorial_With_Loops(number)
+  
+  def Factorial_With_Loops(self, number):
+    print (f'Factorial of: ', number)
+    try:  
+      if number == 0:
+        return 1
+      else:
+        i = 1
+        factorial = 1
+        for i in range(number):
+          #print(f'',i)
+          factorial = factorial * (i + 1)
+        
+        print(f'Factorial: ', factorial	)
+        #return factorial
+        #return number * self.Factorial_With_Loops(number - 1)
+    
+    except Exception as e: print(e)
+
+  def Factorial_With_Recurssion(self, number):
+    pass
       
     

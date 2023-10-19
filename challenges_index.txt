@@ -3,6 +3,8 @@
 
 Last update: Oct - 18 - 2023
 
+DS/Algo: DS - Arrays
+
 Description:
 Reverse a given string.
 
@@ -15,6 +17,8 @@ https://www.udemy.com/course/master-the-coding-interview-data-structures-algorit
 #2 Merge_Sorted_Arrays
 
 Last update: Oct - 18 - 2023
+
+DS/Algo: DS - Arrays
 
 Description:
 Two lists of sorted integers are given. Merge the two lists and keep the sorting.
@@ -29,8 +33,25 @@ https://www.udemy.com/course/master-the-coding-interview-data-structures-algorit
 
 Last update: Oct - 18 - 2023
 
+DS/Algo: DS - Hash Tables
+
 Description:
 Given a list, find the 1st recurring element.
+
+Challenge from the 
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+"""
+
+"""
+#4 Factorial using recursion
+
+Last update: Oct - 18 - 2023
+
+DS/Algo: Algo - Recurssion
+
+Description:
+Find the factorial of a given number. Use 2 functions: one using loops and one using recursion.
 
 Challenge from the 
 Master the Coding Interview: Data Structures + Algorithms

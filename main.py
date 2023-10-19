@@ -1,12 +1,13 @@
 from functools import reduce
 import numpy as np
+import random
 
 from misc_challenges import Challenges
 from tools import Tools
 
 Challenges = Challenges()  # Create an instance of the Challenges class.
 
-runChallenge = Challenges.FIND_RECURRING_CHARACTER
+runChallenge = Challenges.FACTORIAL_OF_A_NUMBER
 
 if (runChallenge == 1):
   ## Reverse a string
@@ -28,3 +29,8 @@ if ( runChallenge == 3 ):
   list1 = reduce(lambda acc, x: acc + [np.random.randint(start, end)], range(num), [])
   
   Challenges.Find_Recurring_Character(list1)
+
+
+if ( runChallenge == 4 ):
+  Challenges.Factorial_Of_A_Number(random.randint(0,9), int(Challenges.USE_FACTORIAL_WITH_LOOPS))
+  #Challenges.Factorial_Of_A_Number(6, Challenges.Factorial_With_Recurssion)
