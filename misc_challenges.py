@@ -9,17 +9,130 @@ class Challenges:
   FIND_RECURRING_CHARACTER = 3
   FACTORIAL_OF_A_NUMBER = 4
   
-  USE_FACTORIAL_WITH_LOOPS = 1
-  USE_FACTORIAL_WITH_RECURSSION = 2
+  USE_ITERATIVE = 1
+  USE_RECURSSION = 2
+
+  FACTORIAL_SEQUENCE = 1
+  FIBONACCI_SEQUENCE = 2
   
-  def Reverse_String(self, string):
-    # TODO: Lists validations
+  ## Methods
+  ## Recursion
+  def Iterative_or_Recursive(self, numeric_sequence, iterative_or_recursion, number_or_index):
+    # Factorial
+    if ( numeric_sequence == self.FACTORIAL_SEQUENCE ):
+      if ( iterative_or_recursion == self.USE_ITERATIVE ):
+        self.Factorial_Of_A_Number(number_or_index, self.USE_ITERATIVE)
+
+      if ( iterative_or_recursion == self.USE_RECURSSION ):
+        self.Factorial_Of_A_Number(number_or_index, self.USE_RECURSSION)
+
+    # Fibbonacci
+    if ( numeric_sequence == self.FIBONACCI_SEQUENCE ):
+      if ( iterative_or_recursion == self.USE_ITERATIVE ):
+        self.Index_Value_Of_Fibbonacci_Number_Iterative(number_or_index)
+
+      if ( iterative_or_recursion == self.USE_RECURSSION ):
+        self.Index_Value_Of_Fibbonacci_Number_Recursive(number_or_index)
+    
+  def Index_Value_Of_Fibbonacci_Number_Iterative(self, index):
+    timeOfNow = datetime.now()
+    start_time = timeOfNow
 
     try:
-      reversed_string = Tools.reverse_string(string)  # Call the method on the instance
-      print(reversed_string)  # Print the result
+      i = 0
+      x = 0
+      y = 1
+      FibbonacciList = []
+      for i in range(index):        
+        z = x + y
+        FibbonacciList.append(z)
+        y = x
+        x = z
+
+      #print(FibbonacciList)
+      print(f'The Fibbonacci number at index {index-1} is {FibbonacciList[index-1]}')
+        
+    except Exception as e: print(e)
+    
+  
+    timeOfNow = datetime.now()    
+    end_time = timeOfNow
+    #print(f'End time: {end_time}'	)
+    print(f'Total time: {end_time - start_time}')
+  
+  def Index_Value_Of_Fibbonacci_Number_Recursive(self, index):
+    pass  
+  
+  def Factorial_Of_A_Number(self, number, fx):
+    # Compare side by side compute time
+
+    timeOfNow = datetime.now()
+    start_time = timeOfNow
+    #print(f'Start time: {start_time}'	)
+    #print('In Factorial_Of_A_Number. Number is: ' + str(number) + ' Fx is: ' + str(fx))
+    if ( number > 0 and fx == self.USE_ITERATIVE ):
+      #print(f'Factorial of {number} looping...')
+      self.Factorial_Iterative(number)
+
+    if ( number > 0 and fx == self.USE_RECURSSION ):
+      #print(f'Factorial of {number} recursive...')
+      factorial = 1
+      self.Factorial_With_Recursion(number, 1, 1)
+
+    timeOfNow = datetime.now()    
+    end_time = timeOfNow
+    #print(f'End time: {end_time}'	)
+    print(f'Total time: {end_time - start_time}')
+  
+  def Factorial_Iterative(self, number):
+    #print (f'Factorial of: ', number)
+    try:  
+      if number == 0:
+        return 1
+      else:
+        i = 1
+        factorial = 1
+        for i in range(number):
+          #print(f'',i)
+          factorial = factorial * (i + 1)
+  
+        #print(f'Factorial: ', factorial	)
+        print(f'Factorial (looping) of {number} is {factorial}')
+        #return factorial
+  
     except Exception as e: print(e)
 
+  def Factorial_With_Recursion(self, number, i, factorial):
+    try:      
+      if i <= number:
+        factorial = factorial * i
+        #print(f'Factorial of {i} is: {factorial}')
+        i += 1        
+        self.Factorial_With_Recursion(number, i, factorial)
+        #return factorial
+      else:
+      # End of the recursion
+        print(f'Factorial (recursion) of {number} is: {factorial}')
+    except Exception as e: print(e) 
+
+  ## Hash tables
+  def Find_Recurring_Character(self, array):
+    print(array)
+    #Define the dictionaty where the list elements will be stored.
+    listDictionary = {}
+    try:
+      # Loop through the list and add each element to the dictionary.
+      for n in array:
+        # Since a dictionary cannot contain duplicate keys, if there's a recurrent key (repeated character) it will stop and exit the loop returning the recurrenct character.
+        if n in listDictionary:
+          print(f'The 1st recurring character is: ', str(n))
+          return n
+        else:
+          listDictionary[n] = str(n)
+      print(f'(Undefined) There is no recurring character in the list.'	)  
+    except Exception as e: print(e)
+
+  ## Arrays
   def Merge_Sorted_Arrays(self, array1, array2):
     # TODO: 
     #  Add validations to the lists to make sure they are integers.
@@ -27,7 +140,7 @@ class Challenges:
     print("Given lists: ")
     print(array1)
     print(array2)
-        
+
     mergedSortedArray = array1+array2
     returnedMergedSortedArray = []
     print("Merged list: ")
@@ -45,76 +158,25 @@ class Challenges:
           else:
               returnedMergedSortedArray.append(array2[j])
               j += 1
-  
+
       print("Merged and sorted list: ")
       print(returnedMergedSortedArray)
       return returnedMergedSortedArray
     except Exception as e: print(e)
+  
+  def Reverse_String(self, string):
+    # TODO: Lists validations
 
-  def Find_Recurring_Character(self, array):
-    print(array)
-    #Define the dictionaty where the list elements will be stored.
-    listDictionary = {}
     try:
-      # Loop through the list and add each element to the dictionary.
-      for n in array:
-        # Since a dictionary cannot contain duplicate keys, if there's a recurrent key (repeated character) it will stop and exit the loop returning the recurrenct character.
-        if n in listDictionary:
-          print(f'The 1st recurring character is: ', str(n))
-          return n
-        else:
-          listDictionary[n] = str(n)
-      print(f'(Undefined) There is no recurring character in the list.'	)  
+      reversed_string = Tools.reverse_string(string)  # Call the method on the instance
+      print(reversed_string)  # Print the result
     except Exception as e: print(e)
 
-  def Factorial_Of_A_Number(self, number, fx):
-    # Compare side by side compute time
 
-    timeOfNow = datetime.now()
-    start_time = timeOfNow
-    #print(f'Start time: {start_time}'	)
-    #print('In Factorial_Of_A_Number. Number is: ' + str(number) + ' Fx is: ' + str(fx))
-    if ( number > 0 and fx == self.USE_FACTORIAL_WITH_LOOPS ):
-      #print(f'Factorial of {number} looping...')
-      self.Factorial_With_Loops(number)
 
-    if ( number > 0 and fx == self.USE_FACTORIAL_WITH_RECURSSION ):
-      #print(f'Factorial of {number} recursive...')
-      factorial = 1
-      self.Factorial_With_Recursion(number, 1, 1)
+
+
+
     
-    timeOfNow = datetime.now()    
-    end_time = timeOfNow
-    #print(f'End time: {end_time}'	)
-    print(f'Total time: {end_time - start_time}')
-    
-  def Factorial_With_Recursion(self, number, i, factorial):
-    try:      
-      if i <= number:
-        factorial = factorial * i
-        #print(f'Factorial of {i} is: {factorial}')
-        i += 1        
-        self.Factorial_With_Recursion(number, i, factorial)
-        #return factorial
-      else:
-      # End of the recursion
-        print(f'Factorial (recursion) of {number} is: {factorial}')
-    except Exception as e: print(e)    
+   
       
-  def Factorial_With_Loops(self, number):
-      #print (f'Factorial of: ', number)
-      try:  
-        if number == 0:
-          return 1
-        else:
-          i = 1
-          factorial = 1
-          for i in range(number):
-            #print(f'',i)
-            factorial = factorial * (i + 1)
-
-          #print(f'Factorial: ', factorial	)
-          print(f'Factorial (looping) of {number} is {factorial}')
-          #return factorial
-
-      except Exception as e: print(e)

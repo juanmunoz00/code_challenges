@@ -57,3 +57,22 @@ Challenge from the
 Master the Coding Interview: Data Structures + Algorithms
 https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
 """
+
+"""
+#5 Index of Fibonacci
+
+Last update: Oct - 18 - 2023
+
+DS/Algo: Algo - Recurssion
+
+Description:
+Given a number N return the index value of the Fibonacci sequence, where the sequence is:
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181
+
+The pattern of the sequence is that each value is the sum of the 2 previous values. This is: N = 5 -> 2+3
+
+Challenge from the 
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+"""
