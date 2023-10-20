@@ -34,10 +34,11 @@ if ( runChallenge == 3 ):
 if ( runChallenge == 4 ):
   #USE_FACTORIAL_WITH_LOOPS
   #USE_FACTORIAL_WITH_RECURSSION
-  number = random.randint(2,9)
+  number = random.randint(2,20)
   # Iterative
   #Challenges.Iterative_or_Recursive(Challenges.FACTORIAL_SEQUENCE, Challenges.USE_ITERATIVE, number)
   #Challenges.Iterative_or_Recursive(Challenges.FACTORIAL_SEQUENCE, Challenges.USE_RECURSSION, number)
 
   # Recursive
-  Challenges.Iterative_or_Recursive(Challenges.FIBONACCI_SEQUENCE, Challenges.USE_ITERATIVE, number)
+  #Challenges.Iterative_or_Recursive(Challenges.FIBONACCI_SEQUENCE, Challenges.USE_ITERATIVE, number)
+  Challenges.Iterative_or_Recursive(Challenges.FIBONACCI_SEQUENCE, Challenges.USE_RECURSSION, number)

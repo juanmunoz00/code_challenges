@@ -32,22 +32,36 @@ class Challenges:
         self.Index_Value_Of_Fibbonacci_Number_Iterative(number_or_index)
 
       if ( iterative_or_recursion == self.USE_RECURSSION ):
-        self.Index_Value_Of_Fibbonacci_Number_Recursive(number_or_index)
-    
+        timeOfNow = datetime.now()
+        start_time = timeOfNow
+        
+        index = number_or_index
+        i = 0
+        currF = 0
+        prevF = 1
+        FibbonacciList = []
+        
+        self.Index_Value_Of_Fibbonacci_Number_Recursive(i, index, prevF, currF, FibbonacciList)
+        #self.Index_Value_Of_Fibbonacci_Number_Recursive(number_or_index)
+        timeOfNow = datetime.now()    
+        end_time = timeOfNow
+        #print(f'End time: {end_time}'	)
+        print(f'Total time: {end_time - start_time}')
+
   def Index_Value_Of_Fibbonacci_Number_Iterative(self, index):
     timeOfNow = datetime.now()
     start_time = timeOfNow
 
     try:
       i = 0
-      x = 0
-      y = 1
+      currF = 0
+      prevF = 1
       FibbonacciList = []
       for i in range(index):        
-        z = x + y
-        FibbonacciList.append(z)
-        y = x
-        x = z
+        f = currF + prevF
+        FibbonacciList.append(f)
+        prevF = currF
+        currF = f
 
       #print(FibbonacciList)
       print(f'The Fibbonacci number at index {index-1} is {FibbonacciList[index-1]}')
@@ -60,8 +74,22 @@ class Challenges:
     #print(f'End time: {end_time}'	)
     print(f'Total time: {end_time - start_time}')
   
-  def Index_Value_Of_Fibbonacci_Number_Recursive(self, index):
-    pass  
+  def Index_Value_Of_Fibbonacci_Number_Recursive(self, i, index, prevF, currF, FibbonacciList):    
+    try:
+      if ( i <= index ):          
+        f = currF + prevF
+        FibbonacciList.append(f)
+        
+        prevF = currF
+        currF = f
+        i += 1
+
+        self.Index_Value_Of_Fibbonacci_Number_Recursive(i, index, prevF, currF, FibbonacciList)
+      else:
+        #print(FibbonacciList)
+        print(f'The Fibbonacci number at index {index-1} is {FibbonacciList[index-1]}')
+
+    except Exception as e: print(e)
   
   def Factorial_Of_A_Number(self, number, fx):
     # Compare side by side compute time
