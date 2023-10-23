@@ -46,7 +46,7 @@ https://www.udemy.com/course/master-the-coding-interview-data-structures-algorit
 """
 #4 Factorial using recursion
 
-Last update: Oct - 18 - 2023
+Last update: Oct - 19 - 2023
 
 DS/Algo: Algo - Recurssion
 
@@ -61,7 +61,7 @@ https://www.udemy.com/course/master-the-coding-interview-data-structures-algorit
 """
 #5 Index of Fibonacci
 
-Last update: Oct - 18 - 2023
+Last update: Oct - 20 - 2023
 
 DS/Algo: Algo - Recurssion
 
@@ -71,6 +71,36 @@ Given a number N return the index value of the Fibonacci sequence, where the seq
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181
 
 The pattern of the sequence is that each value is the sum of the 2 previous values. This is: N = 5 -> 2+3
+
+Challenge from the 
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+"""
+#6 Merge Sort
+
+Last update: Oct - 20 - 2023
+
+DS/Algo: Algo - Merge Sort
+
+Description:
+Using the merge sort, sort this list:
+
+6,5,3,1,8,7,2,4
+
+Challenge from the 
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+"""
+#7 Quick Sort
+
+Last update: Oct - 23 - 2023
+
+DS/Algo: Algo - Quick Sort
+
+Description:
+Using the quick sort, sort this list:
+
+0,9,3,8,2,7,5
 
 Challenge from the 
 Master the Coding Interview: Data Structures + Algorithms

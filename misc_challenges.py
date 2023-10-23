@@ -1,5 +1,6 @@
 from tools import Tools
 from datetime import datetime
+import math
 
 Tools = Tools() # Create an instance of the Tools class
 
@@ -8,15 +9,69 @@ class Challenges:
   MERGED_SORTED_ARRAY = 2
   FIND_RECURRING_CHARACTER = 3
   FACTORIAL_OF_A_NUMBER = 4
+  QUICK_SORT = 5
+  MERGE_SORT = 6
+  INSERT_SORT = 7
   
   USE_ITERATIVE = 1
   USE_RECURSSION = 2
 
   FACTORIAL_SEQUENCE = 1
   FIBONACCI_SEQUENCE = 2
+
+  
   
   ## Methods
-  ## Recursion
+  ## Quick Sort
+  def Quick_Sort(self, array, iteration):
+    try:
+      print(f'*** Iteration {iteration} ***')
+      numListCopy = array # Copy of the list to proceed with quick sort algorithm.
+
+      listSize = len(numListCopy)
+      pivotNumber = numListCopy[listSize - 1] # Last element of the list is the pivot number.
+      splitAtElement = math.floor(listSize / 2) # Split the list in half.    
+      leftList = numListCopy[0:splitAtElement] # List with numbers less than the pivot.
+      lessThanPivotList = []
+      
+      rigthList = numListCopy[splitAtElement:len(numListCopy)] # List with numbers greater than the pivot.]
+      greaterThanPivotList = []
+      
+      # Sort the list
+      print(f'Unsorted list: {numListCopy}')
+      print(f'Pivot: {pivotNumber}')
+      
+      # Sort left list
+      print(f'leftList: {leftList}')
+      for i in range(len(leftList)):
+        if( leftList[i] < pivotNumber ):
+          lessThanPivotList.append(leftList[i])
+        else:
+          greaterThanPivotList.append(leftList[i])
+
+      # Sort right list
+      print(f'rigthList: {rigthList}')
+      for i in range(len(rigthList)):
+        #print(f'rigthList[i]: {rigthList[i]}'	)
+        if ( rigthList[i] > pivotNumber ):
+          greaterThanPivotList.append(rigthList[i])
+        else:
+          lessThanPivotList.append(rigthList[i])
+          
+      print(f'lessThanPivotList: {lessThanPivotList}')
+      print(f'greaterThanPivotList: {greaterThanPivotList}')
+
+      array = lessThanPivotList + greaterThanPivotList
+      print(f'Re-sort array {array}')
+      if ( iteration <= 6 ):
+        self.Quick_Sort(array, iteration + 1)
+
+    except Exception as e: print(e)
+  
+  ## Sorting - Merge
+  def Merge_Sorted_Arrays(self, array1, array2):
+    pass
+  ## Iterative and Recursion
   def Iterative_or_Recursive(self, numeric_sequence, iterative_or_recursion, number_or_index):
     # Factorial
     if ( numeric_sequence == self.FACTORIAL_SEQUENCE ):
