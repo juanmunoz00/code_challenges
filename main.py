@@ -48,6 +48,6 @@ if ( runChallenge == Challenges.QUICK_SORT ):
   if( len(numList) > 5 ):
     listSize = len(numList)
     pivotNumber = numList[listSize - 1]
-    Challenges.Quick_Sort(numList, pivotNumber, iteration=1)
+    Challenges.Quick_Sort(numList, leftPivotNumber = 0, rightPivotNumber = pivotNumber, iteration = 1,iteration_stop=4)
   else:
     print(f'The length of the numbers list must be greater than 5')

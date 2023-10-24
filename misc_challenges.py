@@ -25,86 +25,95 @@ class Challenges:
   # SortHalfList
   def Sort_Half_List(self, list, pivotNumber):
     try:
-      leftList = list
-      lessThanPivotList = []
-      greaterThanPivotList = []
-      print(f'leftList: {leftList}')
-      for i in range(len(leftList)):
-        if( leftList[i] < pivotNumber ):
-          lessThanPivotList.append(leftList[i])
-        else:
-          greaterThanPivotList.append(leftList[i])
+      leftSortedList = []
+      rightSortedList = []
 
-      return lessThanPivotList, greaterThanPivotList
+      print(f'SHL_pivotNumber: {pivotNumber}')
+      for i in range(len(list)):
+        if ( list[i] <= pivotNumber):
+          leftSortedList.append(list[i])
+        else:
+          rightSortedList.append(list[i])       
+      
+      return leftSortedList, rightSortedList
     except Exception as e: print(e)
 
   
   ## Quick Sort
-  def Quick_Sort(self, array, pivotNumber, iteration):
+  def Quick_Sort(self, list, leftPivotNumber, rightPivotNumber, iteration, iteration_stop):
     try:
-      print(f'*** Iteration {iteration} ***')
-      numListCopy = array # Copy of the list to proceed with quick sort algorithm.
+      print(f'Initial leftPivotNumber: {leftPivotNumber}')
+      print(f'Initial rightPivotNumber: {rightPivotNumber}')
 
-      listSize = len(numListCopy)
-      #pivotNumber = numListCopy[listSize - 1] # Last element of the list is the pivot number.
-      splitAtElement = math.floor(listSize / 2) # Split the list in half.    
-      leftList = numListCopy[0:splitAtElement] # List with numbers less than the pivot.
-      lessThanPivotList = []
+      leftSortedList, rightSortedList = self.Sort_Half_List(list, pivotNumber = rightPivotNumber)
       
-      rigthList = numListCopy[splitAtElement:len(numListCopy)] # List with numbers greater than the pivot.]
-      greaterThanPivotList = []
-      
-      # Sort the list
-      print(f'Unsorted list: {numListCopy}')
-      print(f'Pivot: {pivotNumber}')
-      
-      # Sort left list
-      #print(f'leftList: {leftList}')
-      lessThanPivotList, greaterThanPivotList = self.Sort_Half_List(leftList, pivotNumber)
-      """
-      for i in range(len(leftList)):
-        if( leftList[i] < pivotNumber ):
-          lessThanPivotList.append(leftList[i])
-        else:
-          greaterThanPivotList.append(leftList[i])
-      """
-      
+      print(f'leftSortedList = {leftSortedList}')
+      print(f'rightSortedList = {rightSortedList}')
 
-      # Sort right list
-      #print(f'rigthList: {rigthList}')
-      lessThanPivotList, greaterThanPivotList = self.Sort_Half_List(rigthList, pivotNumber)
-      """
-      for i in range(len(rigthList)):
-        #print(f'rigthList[i]: {rigthList[i]}'	)
-        if ( rigthList[i] > pivotNumber ):
-          greaterThanPivotList.append(rigthList[i])
-        else:
-          lessThanPivotList.append(rigthList[i])
-      """
+      # Re-sort with new pivots
+      if( len(leftSortedList) > 1 ): 
+        leftPivotNumber = leftSortedList[- 2]
+      if( len(rightSortedList) > 1 ): 
+        rightPivotNumber = rightSortedList[- 2]
+
+      print(f'leftPivotNumber: {leftPivotNumber}')     
+      print(f'rightPivotNumber: {rightPivotNumber}')
+
+      print(f'##########################')
+      leftSortedList1 = leftSortedList
+      rightSortedList1  = rightSortedList
+
+      print(f'leftSortedList = {leftSortedList}')
+      print(f'rightSortedList = {rightSortedList}')
+
+      print(f'************************')
+      leftSortedList, rightSortedList = self.Sort_Half_List(leftSortedList1, pivotNumber = leftPivotNumber)
+
+      print(f'leftSortedList = {leftSortedList}')
+      print(f'rightSortedList = {rightSortedList}')
+      # Merged sorted list
+      leftSortedList1= leftSortedList + rightSortedList
+      print(f'Merged left lists: {leftSortedList1}')
       
-          
-      print(f'lessThanPivotList: {lessThanPivotList}')
-      print(f'greaterThanPivotList: {greaterThanPivotList}')
+      print(f'************************')      
+      leftSortedList, rightSortedList = self.Sort_Half_List(rightSortedList1, pivotNumber = rightPivotNumber)
+  
+      print(f'leftSortedList = {leftSortedList}')
+      print(f'rightSortedList = {rightSortedList}')
+      # Merged sorted list
+      rightSortedList1= leftSortedList + rightSortedList
+      print(f'Merged left lists: {rightSortedList1}')
 
-      array = lessThanPivotList + greaterThanPivotList
-      print(f'Re-sort array {array}')
-      if ( iteration <= 6 ):
-        # Pivot the n-st element of the left list
-        #print(f'len(lessThanPivotList)-2: {len(lessThanPivotList)-2} ')
-        leftListNewPivot = len(lessThanPivotList)-2
-        #print(f'leftListNewPivot: {leftListNewPivot}')
-        leftListNewPivot = lessThanPivotList[leftListNewPivot]
-        print(f'lessThanPivotList: {leftListNewPivot}')
-        
-        #rightListNewPivot = greaterThanPivotList[len(lessThanPivotList)-1]
-        rightListNewPivot = len(greaterThanPivotList)-1
-        #print(f'leftListNewPivot: {leftListNewPivot}')
-        rightListNewPivot = greaterThanPivotList[rightListNewPivot]
-        print(f'rightListNewPivot: {rightListNewPivot}')
-        
-        # Pivot the n-st element of the right list
+      print(f'##########################')
+      # Re-sort with new pivots
+      if( len(leftSortedList1) > 1 ): 
+        leftPivotNumber = leftSortedList1[- 2]
+      if( len(rightSortedList1) > 1 ): 
+        rightPivotNumber = rightSortedList1[- 2]
 
+      print(f'************************')
+      leftSortedList, rightSortedList = self.Sort_Half_List(leftSortedList1, pivotNumber = leftPivotNumber)
+  
+      print(f'leftSortedList = {leftSortedList}')
+      print(f'rightSortedList = {rightSortedList}')
+      # Merged sorted list
+      leftSortedList1= leftSortedList + rightSortedList
+      print(f'Merged left lists: {leftSortedList1}')
 
+      print(f'************************')      
+      leftSortedList, rightSortedList = self.Sort_Half_List(rightSortedList1, pivotNumber = rightPivotNumber)
+  
+      print(f'leftSortedList = {leftSortedList}')
+      print(f'rightSortedList = {rightSortedList}')
+      # Merged sorted list
+      rightSortedList1= leftSortedList + rightSortedList
+      print(f'Merged left lists: {rightSortedList1}')
+  
+      print(f'##########################')
+
+      finalMergedList = leftSortedList1 + rightSortedList1
+      print(f'finalMergedList: {finalMergedList}')
+    
     except Exception as e: print(e)
   
   ## Sorting - Merge
