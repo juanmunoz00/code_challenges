@@ -22,14 +22,31 @@ class Challenges:
   
   
   ## Methods
+  # SortHalfList
+  def Sort_Half_List(self, list, pivotNumber):
+    try:
+      leftList = list
+      lessThanPivotList = []
+      greaterThanPivotList = []
+      print(f'leftList: {leftList}')
+      for i in range(len(leftList)):
+        if( leftList[i] < pivotNumber ):
+          lessThanPivotList.append(leftList[i])
+        else:
+          greaterThanPivotList.append(leftList[i])
+
+      return lessThanPivotList, greaterThanPivotList
+    except Exception as e: print(e)
+
+  
   ## Quick Sort
-  def Quick_Sort(self, array, iteration):
+  def Quick_Sort(self, array, pivotNumber, iteration):
     try:
       print(f'*** Iteration {iteration} ***')
       numListCopy = array # Copy of the list to proceed with quick sort algorithm.
 
       listSize = len(numListCopy)
-      pivotNumber = numListCopy[listSize - 1] # Last element of the list is the pivot number.
+      #pivotNumber = numListCopy[listSize - 1] # Last element of the list is the pivot number.
       splitAtElement = math.floor(listSize / 2) # Split the list in half.    
       leftList = numListCopy[0:splitAtElement] # List with numbers less than the pivot.
       lessThanPivotList = []
@@ -42,21 +59,29 @@ class Challenges:
       print(f'Pivot: {pivotNumber}')
       
       # Sort left list
-      print(f'leftList: {leftList}')
+      #print(f'leftList: {leftList}')
+      lessThanPivotList, greaterThanPivotList = self.Sort_Half_List(leftList, pivotNumber)
+      """
       for i in range(len(leftList)):
         if( leftList[i] < pivotNumber ):
           lessThanPivotList.append(leftList[i])
         else:
           greaterThanPivotList.append(leftList[i])
+      """
+      
 
       # Sort right list
-      print(f'rigthList: {rigthList}')
+      #print(f'rigthList: {rigthList}')
+      lessThanPivotList, greaterThanPivotList = self.Sort_Half_List(rigthList, pivotNumber)
+      """
       for i in range(len(rigthList)):
         #print(f'rigthList[i]: {rigthList[i]}'	)
         if ( rigthList[i] > pivotNumber ):
           greaterThanPivotList.append(rigthList[i])
         else:
           lessThanPivotList.append(rigthList[i])
+      """
+      
           
       print(f'lessThanPivotList: {lessThanPivotList}')
       print(f'greaterThanPivotList: {greaterThanPivotList}')
@@ -64,7 +89,21 @@ class Challenges:
       array = lessThanPivotList + greaterThanPivotList
       print(f'Re-sort array {array}')
       if ( iteration <= 6 ):
-        self.Quick_Sort(array, iteration + 1)
+        # Pivot the n-st element of the left list
+        #print(f'len(lessThanPivotList)-2: {len(lessThanPivotList)-2} ')
+        leftListNewPivot = len(lessThanPivotList)-2
+        #print(f'leftListNewPivot: {leftListNewPivot}')
+        leftListNewPivot = lessThanPivotList[leftListNewPivot]
+        print(f'lessThanPivotList: {leftListNewPivot}')
+        
+        #rightListNewPivot = greaterThanPivotList[len(lessThanPivotList)-1]
+        rightListNewPivot = len(greaterThanPivotList)-1
+        #print(f'leftListNewPivot: {leftListNewPivot}')
+        rightListNewPivot = greaterThanPivotList[rightListNewPivot]
+        print(f'rightListNewPivot: {rightListNewPivot}')
+        
+        # Pivot the n-st element of the right list
+
 
     except Exception as e: print(e)
   
