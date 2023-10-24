@@ -28,7 +28,7 @@ class Challenges:
       leftSortedList = []
       rightSortedList = []
 
-      print(f'SHL_pivotNumber: {pivotNumber}')
+      #print(f'SHL_pivotNumber: {pivotNumber}')
       for i in range(len(list)):
         if ( list[i] <= pivotNumber):
           leftSortedList.append(list[i])
@@ -40,16 +40,61 @@ class Challenges:
 
   
   ## Quick Sort
-  def Quick_Sort(self, list, leftPivotNumber, rightPivotNumber, iteration, iteration_stop):
+  def Quick_Sort(self, list, leftPivotNumber, rightPivotNumber, iteration_stop):
     try:
-      print(f'Initial leftPivotNumber: {leftPivotNumber}')
-      print(f'Initial rightPivotNumber: {rightPivotNumber}')
+      # Code starts here
+      print(f'Initial unsorted list: {list}')
+      #print(f'Initial leftPivotNumber: {leftPivotNumber}')
+      #print(f'Initial rightPivotNumber: {rightPivotNumber}')
 
       leftSortedList, rightSortedList = self.Sort_Half_List(list, pivotNumber = rightPivotNumber)
-      
-      print(f'leftSortedList = {leftSortedList}')
-      print(f'rightSortedList = {rightSortedList}')
 
+      #print(f'leftSortedList = {leftSortedList}')
+      #print(f'rightSortedList = {rightSortedList}')
+
+      for i in range (iteration_stop):
+        #if i == 3: break
+        # Re-sort with new pivots
+        if( len(leftSortedList) > 1 ): 
+          leftPivotNumber = leftSortedList[- 2]
+        if( len(rightSortedList) > 1 ): 
+          rightPivotNumber = rightSortedList[- 2]
+
+        #print(f'leftPivotNumber: {leftPivotNumber}')     
+        #print(f'rightPivotNumber: {rightPivotNumber}')
+
+        #print(f'##########################')
+        leftSortedList1 = leftSortedList
+        rightSortedList1  = rightSortedList
+
+        #print(f'leftSortedList = {leftSortedList}')
+        #print(f'rightSortedList = {rightSortedList}')
+
+        #print(f'************************')
+        leftSortedList, rightSortedList = self.Sort_Half_List(leftSortedList1, pivotNumber = leftPivotNumber)
+
+        #print(f'leftSortedList = {leftSortedList}')
+        #print(f'rightSortedList = {rightSortedList}')
+        # Merged sorted list
+        leftSortedList1= leftSortedList + rightSortedList
+        #print(f'Merged left lists: {leftSortedList1}')
+
+        #print(f'************************')      
+        leftSortedList, rightSortedList = self.Sort_Half_List(rightSortedList1, pivotNumber = rightPivotNumber)
+
+        #print(f'leftSortedList = {leftSortedList}')
+        #print(f'rightSortedList = {rightSortedList}')
+        ## Merged sorted list
+        rightSortedList1= leftSortedList + rightSortedList
+        #print(f'Merged left lists: {rightSortedList1}')
+
+        leftSortedList = leftSortedList1
+        rightSortedList = rightSortedList1
+
+      finalMergedList = leftSortedList1 + rightSortedList1
+      print(f'finalMergedList: {finalMergedList}')
+      
+      """
       # Re-sort with new pivots
       if( len(leftSortedList) > 1 ): 
         leftPivotNumber = leftSortedList[- 2]
@@ -74,10 +119,10 @@ class Challenges:
       # Merged sorted list
       leftSortedList1= leftSortedList + rightSortedList
       print(f'Merged left lists: {leftSortedList1}')
-      
+
       print(f'************************')      
       leftSortedList, rightSortedList = self.Sort_Half_List(rightSortedList1, pivotNumber = rightPivotNumber)
-  
+
       print(f'leftSortedList = {leftSortedList}')
       print(f'rightSortedList = {rightSortedList}')
       # Merged sorted list
@@ -93,7 +138,7 @@ class Challenges:
 
       print(f'************************')
       leftSortedList, rightSortedList = self.Sort_Half_List(leftSortedList1, pivotNumber = leftPivotNumber)
-  
+
       print(f'leftSortedList = {leftSortedList}')
       print(f'rightSortedList = {rightSortedList}')
       # Merged sorted list
@@ -102,17 +147,21 @@ class Challenges:
 
       print(f'************************')      
       leftSortedList, rightSortedList = self.Sort_Half_List(rightSortedList1, pivotNumber = rightPivotNumber)
-  
+
       print(f'leftSortedList = {leftSortedList}')
       print(f'rightSortedList = {rightSortedList}')
       # Merged sorted list
       rightSortedList1= leftSortedList + rightSortedList
       print(f'Merged left lists: {rightSortedList1}')
-  
+
       print(f'##########################')
 
       finalMergedList = leftSortedList1 + rightSortedList1
       print(f'finalMergedList: {finalMergedList}')
+      """
+
+      
+      # Code ends here
     
     except Exception as e: print(e)
   
