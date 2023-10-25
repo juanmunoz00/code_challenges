@@ -7,7 +7,7 @@ from tools import Tools
 
 Challenges = Challenges()  # Create an instance of the Challenges class.
 
-runChallenge = Challenges.QUICK_SORT
+runChallenge = Challenges.LEETCODE_3SUM
 
 if (runChallenge == Challenges.REVERSE_STRING):
   ## Reverse a string
@@ -42,7 +42,6 @@ if ( runChallenge == Challenges.FACTORIAL_OF_A_NUMBER):
   #Challenges.Iterative_or_Recursive(Challenges.FIBONACCI_SEQUENCE, Challenges.USE_ITERATIVE, number)
   Challenges.Iterative_or_Recursive(Challenges.FIBONACCI_SEQUENCE, Challenges.USE_RECURSSION, number)
 
-
 if ( runChallenge == Challenges.QUICK_SORT ):
   #numList = [0,9,3,8,2,7,5]
   numList = [random.randint(0,9) for i in range(5)]
@@ -52,3 +51,7 @@ if ( runChallenge == Challenges.QUICK_SORT ):
     Challenges.Quick_Sort(numList, leftPivotNumber = 0, rightPivotNumber = pivotNumber, iteration_stop=10)
   else:
     print(f'The length of the numbers list must be greater than 5')
+
+if ( runChallenge == Challenges.LEETCODE_3SUM ):
+  nums = [-1,0,1,2,-1,-4]
+  Challenges.Solved_3Sum(nums)

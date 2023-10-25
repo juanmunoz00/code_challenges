@@ -12,16 +12,55 @@ class Challenges:
   QUICK_SORT = 5
   MERGE_SORT = 6
   INSERT_SORT = 7
+  LEETCODE_3SUM = 8
   
   USE_ITERATIVE = 1
   USE_RECURSSION = 2
 
   FACTORIAL_SEQUENCE = 1
-  FIBONACCI_SEQUENCE = 2
-
-  
+  FIBONACCI_SEQUENCE = 2  
   
   ## Methods
+  def Solved_3Sum(self, nums):    
+    try:
+      #List size.
+      listSize = len(nums)
+      # Initialize the indexes.
+      i = 0
+      # Initialize the lists
+      triplets = []
+      tripletsSum = []
+      # Set a fixed number (index) that will be swaped through the list until i = len - 2.
+      while ( i < listSize - 2 ):
+        j = i + 1
+        k = j + 1        
+        
+        fixedNum = nums[i]
+        print(f'***** {fixedNum} *****')
+        #print(f'j: {j}')
+        #print(f'k: {k}')
+        
+        # Take the next 2 numbers (indexes) right of i and sum them. 
+        # Add them to a list if the sum is equal to zero.
+        tripletsSum.clear()
+        while ( ( j <= listSize - 2  ) and ( k <= listSize - 1 ) ):
+
+            
+          print(f'######')
+          print(f'j-index:[{j}] | j-value: {nums[j]}')
+          print(f'k-index:[{k}] | k-jalue: {nums[k]}')
+          
+          j += 1
+          k = j+1
+        
+        i += 1
+
+      print(f'\nTriplets: {triplets}')
+      print(f'... and that is it !!!')
+
+          
+    except Exception as e: print(e)
+  
   # SortHalfList
   def Sort_Half_List(self, list, pivotNumber):
     try:
@@ -37,7 +76,6 @@ class Challenges:
       
       return leftSortedList, rightSortedList
     except Exception as e: print(e)
-
   
   ## Quick Sort
   def Quick_Sort(self, list, leftPivotNumber, rightPivotNumber, iteration_stop):

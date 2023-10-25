@@ -93,7 +93,7 @@ https://www.udemy.com/course/master-the-coding-interview-data-structures-algorit
 """
 #7 Quick Sort
 
-Last update: Oct - 23 - 2023
+Last update: Oct - 24 - 2023
 
 DS/Algo: Algo - Quick Sort
 
@@ -102,7 +102,21 @@ Using the quick sort, sort this list:
 
 0,9,3,8,2,7,5
 
+***** PENDING TO SOLVE ISSUE OF NUMBERS HIGHER THAN 20 *****
+
 Challenge from the 
 Master the Coding Interview: Data Structures + Algorithms
 https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+"""
+"""
+#8 Leetcode - 3Sum
+
+Last update: Oct - 25 - 2023
+
+Leetcode
+
+Description:
+Get the triplets of a num list.
+
+https://leetcode.com/explore/interview/card/top-interview-questions-medium/103/array-and-strings/776/
 """
