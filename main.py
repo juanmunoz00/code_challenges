@@ -7,7 +7,7 @@ from tools import Tools
 
 Challenges = Challenges()  # Create an instance of the Challenges class.
 
-runChallenge = Challenges.LEETCODE_3SUM
+runChallenge = Challenges.DYNAMIC_PROGRAMMIG_1
 
 if (runChallenge == Challenges.REVERSE_STRING):
   ## Reverse a string
@@ -56,3 +56,10 @@ if ( runChallenge == Challenges.LEETCODE_3SUM ):
   #nums = [-1,0,1,2,-1,-4]
   nums = [0,0,0]
   Challenges.Solved_3Sum(nums)
+
+if ( runChallenge == Challenges.DYNAMIC_PROGRAMMIG_1 ): 
+  nums = []
+  for n in range(10):
+    nums.append(random.randint(3,9))
+
+  Challenges.MemoizedAddTo80(nums)

@@ -107,7 +107,7 @@ Using the quick sort, sort this list:
 Challenge from the 
 Master the Coding Interview: Data Structures + Algorithms
 https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
-"""
+
 """
 #8 Leetcode - 3Sum
 
@@ -120,3 +120,14 @@ Get the triplets of a num list.
 
 https://leetcode.com/explore/interview/card/top-interview-questions-medium/103/array-and-strings/776/
 """
+#8 Dynamic Programming 1
+
+Last update: Oct - 26 - 2023
+
+DS/Algo: Dynamic Programming
+
+Description:
+Sample of a dynamic programming.
+
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/

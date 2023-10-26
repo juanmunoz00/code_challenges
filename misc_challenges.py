@@ -13,6 +13,7 @@ class Challenges:
   MERGE_SORT = 6
   INSERT_SORT = 7
   LEETCODE_3SUM = 8
+  DYNAMIC_PROGRAMMIG_1 = 9
   
   USE_ITERATIVE = 1
   USE_RECURSSION = 2
@@ -21,6 +22,19 @@ class Challenges:
   FIBONACCI_SEQUENCE = 2  
   
   ## Methods
+  def MemoizedAddTo80(self, nums):
+    try:
+      cache = {}
+      for n in nums:
+        if ( n in cache ):
+          print(f'{n} is in cache')
+        else:
+          result = n + 80
+          cache[n] = result
+          print(f'{n} added to cache')
+        
+    except Exception as e: print(e)
+  
   def Solved_3Sum(self, nums):    
     try:
       #List size.
