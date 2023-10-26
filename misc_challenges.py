@@ -25,43 +25,50 @@ class Challenges:
     try:
       #List size.
       listSize = len(nums)
+      
       # Initialize the indexes.
       i = 0
       # Initialize the lists
       triplets = []
       tripletsSum = []
-      # Set a fixed number (index) that will be swaped through the list until i = len - 2.
-      while ( i < listSize - 2 ):
-        j = i + 1
-        k = j + 1        
-        
-        fixedNum = nums[i]
-        #print(f'***** {fixedNum} *****')
-        #print(f'j: {j}')
-        #print(f'k: {k}')
-        
-        # Take the next 2 numbers (indexes) right of i and sum them. 
-        # Add them to a list if the sum is equal to zero.        
-        while ( ( j <= listSize - 2  ) and ( k <= listSize - 1 ) ):
-          #print(f'######')          
-          jValue = nums[j]
-          kValue = nums[k]
+
+      if ( sum(nums) == 0):
+        triplets = nums
           
-          #print(f'j-index:[{j}] | j-value: {jValue}')
-          #print(f'k-index:[{k}] | k-jalue: {kValue}')
-          
-          if( (fixedNum + jValue + kValue) == 0 ):
-            tripletsSum = [fixedNum, jValue, kValue]
-            triplets.append(tripletsSum)
-            #print(f'Triplet: {triplets}')
-          
-          j += 1
-          k = j+1
-        
-        i += 1
-        #print(f'\nTriplets: {triplets}')
-        
+      else:
       
+        # Set a fixed number (index) that will be swaped through the list until i = len - 2.
+        while ( i < listSize - 2 ):
+          j = i + 1
+          k = j + 1        
+          
+          fixedNum = nums[i]
+          #print(f'***** {fixedNum} *****')
+          #print(f'j: {j}')
+          #print(f'k: {k}')
+          
+          # Take the next 2 numbers (indexes) right of i and sum them. 
+          # Add them to a list if the sum is equal to zero.        
+          while ( ( j <= listSize - 2  ) and ( k <= listSize - 1 ) ):
+            #print(f'######')          
+            jValue = nums[j]
+            kValue = nums[k]
+            
+            #print(f'j-index:[{j}] | j-value: {jValue}')
+            #print(f'k-index:[{k}] | k-jalue: {kValue}')
+            
+            if( (fixedNum + jValue + kValue) == 0 ):
+              tripletsSum = [fixedNum, jValue, kValue]
+              triplets.append(tripletsSum)
+              #print(f'Triplet: {triplets}')
+            
+            j += 1
+            k = j+1
+          
+          i += 1
+          #print(f'\nTriplets: {triplets}')
+          
+        
       print(triplets)
       #print(f'... and that is it !!!')
           

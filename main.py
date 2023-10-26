@@ -53,5 +53,6 @@ if ( runChallenge == Challenges.QUICK_SORT ):
     print(f'The length of the numbers list must be greater than 5')
 
 if ( runChallenge == Challenges.LEETCODE_3SUM ):
-  nums = [-1,0,1,2,-1,-4]
+  #nums = [-1,0,1,2,-1,-4]
+  nums = [0,0,0]
   Challenges.Solved_3Sum(nums)
