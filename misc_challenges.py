@@ -41,23 +41,30 @@ class Challenges:
         #print(f'k: {k}')
         
         # Take the next 2 numbers (indexes) right of i and sum them. 
-        # Add them to a list if the sum is equal to zero.
-        tripletsSum.clear()
+        # Add them to a list if the sum is equal to zero.        
         while ( ( j <= listSize - 2  ) and ( k <= listSize - 1 ) ):
-
-            
-          print(f'######')
-          print(f'j-index:[{j}] | j-value: {nums[j]}')
-          print(f'k-index:[{k}] | k-jalue: {nums[k]}')
+          tripletsSum.clear()
+          print(f'######')          
+          jValue = nums[j]
+          kValue = nums[k]
+          
+          print(f'j-index:[{j}] | j-value: {jValue}')
+          print(f'k-index:[{k}] | k-jalue: {kValue}')
+          
+          if( (fixedNum + jValue + kValue) == 0 ):
+            tripletsSum.append(fixedNum)
+            tripletsSum.append(jValue)
+            tripletsSum.append(kValue)
+            triplets.append(tripletsSum)
+            print(f'Triplet: {triplets}')
           
           j += 1
           k = j+1
         
         i += 1
-
-      print(f'\nTriplets: {triplets}')
+        print(f'\nTriplets: {triplets}')
+      
       print(f'... and that is it !!!')
-
           
     except Exception as e: print(e)
   
