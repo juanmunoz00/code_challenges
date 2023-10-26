@@ -36,35 +36,34 @@ class Challenges:
         k = j + 1        
         
         fixedNum = nums[i]
-        print(f'***** {fixedNum} *****')
+        #print(f'***** {fixedNum} *****')
         #print(f'j: {j}')
         #print(f'k: {k}')
         
         # Take the next 2 numbers (indexes) right of i and sum them. 
         # Add them to a list if the sum is equal to zero.        
         while ( ( j <= listSize - 2  ) and ( k <= listSize - 1 ) ):
-          tripletsSum.clear()
-          print(f'######')          
+          #print(f'######')          
           jValue = nums[j]
           kValue = nums[k]
           
-          print(f'j-index:[{j}] | j-value: {jValue}')
-          print(f'k-index:[{k}] | k-jalue: {kValue}')
+          #print(f'j-index:[{j}] | j-value: {jValue}')
+          #print(f'k-index:[{k}] | k-jalue: {kValue}')
           
           if( (fixedNum + jValue + kValue) == 0 ):
-            tripletsSum.append(fixedNum)
-            tripletsSum.append(jValue)
-            tripletsSum.append(kValue)
+            tripletsSum = [fixedNum, jValue, kValue]
             triplets.append(tripletsSum)
-            print(f'Triplet: {triplets}')
+            #print(f'Triplet: {triplets}')
           
           j += 1
           k = j+1
         
         i += 1
-        print(f'\nTriplets: {triplets}')
+        #print(f'\nTriplets: {triplets}')
+        
       
-      print(f'... and that is it !!!')
+      print(triplets)
+      #print(f'... and that is it !!!')
           
     except Exception as e: print(e)
   
