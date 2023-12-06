@@ -24,12 +24,18 @@ class Challenges:
   
   ## Methods
   ## Fib2 - Another approach to Fibbonacci using recursion
-  def DyPo_Fib(self, n):
+  def DyPo_Fib(self, n, memo = {}):
     try:
       #print(f'({n})')
+      if n in memo:
+        return memo[n]
+        
       if ( n <= 2 ): return 1
+      
       fib = self.DyPo_Fib(n - 1) + self.DyPo_Fib(n - 2)  
-      print (f'Fib({n}) = {fib}') 
+      memo[n] = fib
+      
+      #print (f'Fib({n}) = {fib}') 
       return fib
       
     except Exception as e: print(e)

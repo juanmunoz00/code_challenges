@@ -65,10 +65,13 @@ if ( runChallenge == Challenges.DYNAMIC_PROGRAMMIG_1 ):
   Challenges.MemoizedAddTo80(nums)
 
 if ( runChallenge == Challenges.DY_PO_RECURSIVE_FIBONACCI ):  
-  #n = 6 # 8  
-  n = 7  # 13
   """
+  n = 6 # 8  
+  
+  n = 7  # 13  
   n = 8  # 21
+  
   n = 50 # 12586269025
   """
+  n = 20 # 6765
   print(f'Fibonacci of {n} is: {Challenges.DyPo_Fib(n)}')
