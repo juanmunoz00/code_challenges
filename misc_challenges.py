@@ -14,14 +14,26 @@ class Challenges:
   INSERT_SORT = 7
   LEETCODE_3SUM = 8
   DYNAMIC_PROGRAMMIG_1 = 9
+  DY_PO_RECURSIVE_FIBONACCI = 10
   
   USE_ITERATIVE = 1
   USE_RECURSSION = 2
 
   FACTORIAL_SEQUENCE = 1
-  FIBONACCI_SEQUENCE = 2  
+  FIBONACCI_SEQUENCE = 2   
   
   ## Methods
+  ## Fib2 - Another approach to Fibbonacci using recursion
+  def DyPo_Fib(self, n):
+    try:
+      #print(f'({n})')
+      if ( n <= 2 ): return 1
+      fib = self.DyPo_Fib(n - 1) + self.DyPo_Fib(n - 2)  
+      print (f'Fib({n}) = {fib}') 
+      return fib
+      
+    except Exception as e: print(e)
+  
   def MemoizedAddTo80(self, nums):
     try:
       cache = {}
@@ -233,6 +245,7 @@ class Challenges:
   ## Sorting - Merge
   def Merge_Sorted_Arrays(self, array1, array2):
     pass
+ 
   ## Iterative and Recursion
   def Iterative_or_Recursive(self, numeric_sequence, iterative_or_recursion, number_or_index):
     # Factorial

@@ -7,7 +7,7 @@ from tools import Tools
 
 Challenges = Challenges()  # Create an instance of the Challenges class.
 
-runChallenge = Challenges.DYNAMIC_PROGRAMMIG_1
+runChallenge = Challenges.DY_PO_RECURSIVE_FIBONACCI
 
 if (runChallenge == Challenges.REVERSE_STRING):
   ## Reverse a string
@@ -33,7 +33,7 @@ if ( runChallenge == Challenges.FIND_RECURRING_CHARACTER ):
 if ( runChallenge == Challenges.FACTORIAL_OF_A_NUMBER):
   #USE_FACTORIAL_WITH_LOOPS
   #USE_FACTORIAL_WITH_RECURSSION
-  number = random.randint(2,20)
+  number = random.randint(2,3000)
   # Iterative
   #Challenges.Iterative_or_Recursive(Challenges.FACTORIAL_SEQUENCE, Challenges.USE_ITERATIVE, number)
   #Challenges.Iterative_or_Recursive(Challenges.FACTORIAL_SEQUENCE, Challenges.USE_RECURSSION, number)
@@ -63,3 +63,12 @@ if ( runChallenge == Challenges.DYNAMIC_PROGRAMMIG_1 ):
     nums.append(random.randint(3,9))
 
   Challenges.MemoizedAddTo80(nums)
+
+if ( runChallenge == Challenges.DY_PO_RECURSIVE_FIBONACCI ):  
+  #n = 6 # 8  
+  n = 7  # 13
+  """
+  n = 8  # 21
+  n = 50 # 12586269025
+  """
+  print(f'Fibonacci of {n} is: {Challenges.DyPo_Fib(n)}')

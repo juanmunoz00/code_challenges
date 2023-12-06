@@ -1,95 +1,28 @@
 """
-#1 Reverse_String
+#9 Dynamic Programming 1
 
-Last update: Oct - 18 - 2023
+Last update: Oct - 26 - 2023
 
-DS/Algo: DS - Arrays
-
-Description:
-Reverse a given string.
-
-Challenge from the 
-Master the Coding Interview: Data Structures + Algorithms
-https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
-"""
-
-"""
-#2 Merge_Sorted_Arrays
-
-Last update: Oct - 18 - 2023
-
-DS/Algo: DS - Arrays
+DS/Algo: Dynamic Programming
 
 Description:
-Two lists of sorted integers are given. Merge the two lists and keep the sorting.
+Sample of a dynamic programming.
 
-Challenge from the 
 Master the Coding Interview: Data Structures + Algorithms
 https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
-"""
 
 """
-#3 Find_Recurring_Character
+#8 Leetcode - 3Sum
 
-Last update: Oct - 18 - 2023
+Last update: Oct - 25 - 2023
 
-DS/Algo: DS - Hash Tables
+Leetcode
 
 Description:
-Given a list, find the 1st recurring element.
+Get the triplets of a num list.
 
-Challenge from the 
-Master the Coding Interview: Data Structures + Algorithms
-https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
-"""
+https://leetcode.com/explore/interview/card/top-interview-questions-medium/103/array-and-strings/776/
 
-"""
-#4 Factorial using recursion
-
-Last update: Oct - 19 - 2023
-
-DS/Algo: Algo - Recurssion
-
-Description:
-Find the factorial of a given number. Use 2 functions: one using loops and one using recursion.
-
-Challenge from the 
-Master the Coding Interview: Data Structures + Algorithms
-https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
-"""
-
-"""
-#5 Index of Fibonacci
-
-Last update: Oct - 20 - 2023
-
-DS/Algo: Algo - Recurssion
-
-Description:
-Given a number N return the index value of the Fibonacci sequence, where the sequence is:
-
-0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181
-
-The pattern of the sequence is that each value is the sum of the 2 previous values. This is: N = 5 -> 2+3
-
-Challenge from the 
-Master the Coding Interview: Data Structures + Algorithms
-https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
-"""
-#6 Merge Sort
-
-Last update: Oct - 20 - 2023
-
-DS/Algo: Algo - Merge Sort
-
-Description:
-Using the merge sort, sort this list:
-
-6,5,3,1,8,7,2,4
-
-Challenge from the 
-Master the Coding Interview: Data Structures + Algorithms
-https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
 """
 #7 Quick Sort
 
@@ -109,25 +42,92 @@ Master the Coding Interview: Data Structures + Algorithms
 https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
 
 """
-#8 Leetcode - 3Sum
+#6 Merge Sort
 
-Last update: Oct - 25 - 2023
+Last update: Oct - 20 - 2023
 
-Leetcode
+DS/Algo: Algo - Merge Sort
 
 Description:
-Get the triplets of a num list.
+Using the merge sort, sort this list:
 
-https://leetcode.com/explore/interview/card/top-interview-questions-medium/103/array-and-strings/776/
+6,5,3,1,8,7,2,4
+
+Challenge from the 
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+
 """
-#8 Dynamic Programming 1
+#5 Index of Fibonacci
 
-Last update: Oct - 26 - 2023
+Last update: Oct - 20 - 2023
 
-DS/Algo: Dynamic Programming
+DS/Algo: Algo - Recurssion
 
 Description:
-Sample of a dynamic programming.
+Given a number N return the index value of the Fibonacci sequence, where the sequence is:
 
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181
+
+The pattern of the sequence is that each value is the sum of the 2 previous values. This is: N = 5 -> 2+3
+
+Challenge from the 
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+
+"""
+#4 Factorial using recursion
+
+Last update: Oct - 19 - 2023
+
+DS/Algo: Algo - Recurssion
+
+Description:
+Find the factorial of a given number. Use 2 functions: one using loops and one using recursion.
+
+Challenge from the 
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+"""
+
+"""
+#3 Find_Recurring_Character
+
+Last update: Oct - 18 - 2023
+
+DS/Algo: DS - Hash Tables
+
+Description:
+Given a list, find the 1st recurring element.
+
+Challenge from the 
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+
+"""
+#2 Merge_Sorted_Arrays
+
+Last update: Oct - 18 - 2023
+
+DS/Algo: DS - Arrays
+
+Description:
+Two lists of sorted integers are given. Merge the two lists and keep the sorting.
+
+Challenge from the 
+Master the Coding Interview: Data Structures + Algorithms
+https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
+
+"""
+#1 Reverse_String
+
+Last update: Oct - 18 - 2023
+
+DS/Algo: DS - Arrays
+
+Description:
+Reverse a given string.
+
+Challenge from the 
 Master the Coding Interview: Data Structures + Algorithms
 https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms/
