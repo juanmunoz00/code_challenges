@@ -7,7 +7,13 @@ from tools import Tools
 
 Challenges = Challenges()  # Create an instance of the Challenges class.
 
-runChallenge = Challenges.GRID_TRAVELER
+runChallenge = Challenges.CAN_SUM
+
+## CAN_SUM
+if ( runChallenge == Challenges.CAN_SUM ):
+  numbers = [7,14]#[2,4]#[2,3]#[5,3,4,7]
+  targetSum = 300#7
+  print(f'Can sum: {targetSum} with numbers: {numbers}? = { Challenges.canSum(targetSum, numbers) }')
 
 ## GRID_TRAVELER
 if ( runChallenge == Challenges.GRID_TRAVELER ):

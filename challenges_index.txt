@@ -1,4 +1,25 @@
 """
+#10 Dynamic Programming 2
+Last update: Oct - 26 - 2023
+
+DS/Algo: Dynamic Programming
+
+Description:
+Write a function `canSum(targetSum, numbers)` that takes in a targetSum and an array of numbers
+as arguments.
+
+The function should return a boolean indicating whether or not it is possible to generate the targetSum
+using numbers from the array.
+
+you may us an element of the array as many times as needed.
+
+You may assume that all input numbers are nonnegative.
+
+Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges
+https://www.youtube.com/watch?v=oBt53YbR9Kk&t=2918s
+
+
+"""
 #9 Dynamic Programming 1
 
 Last update: Oct - 26 - 2023

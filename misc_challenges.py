@@ -16,6 +16,7 @@ class Challenges:
   DYNAMIC_PROGRAMMIG_1 = 9
   DY_PO_RECURSIVE_FIBONACCI = 10
   GRID_TRAVELER = 11
+  CAN_SUM = 12
   
   USE_ITERATIVE = 1
   USE_RECURSSION = 2
@@ -25,6 +26,29 @@ class Challenges:
   
   ## Methods
 
+  ## canSum
+  """
+  A function that returns a boolean indicating whether or not it is possible to generate the targetSum
+  using numbers from the array.
+  """
+  def canSum(self, targetSum, numbers, memo = {}):
+    try:
+      if (targetSum == 0): return True
+      if (targetSum < 0): return False
+
+      for n in numbers:
+        remainder = targetSum - n
+        if ( remainder in memo ): pass
+        else:
+          memo[remainder] = remainder
+          if ( self.canSum(remainder, numbers, memo)== True ): return True
+ 
+      return False
+    except Exception as e: 
+      print(e)
+      return False
+
+  
   ## Grid Traverse
   ## How many ways are to reach from top left corner to bottom right corner
   def Grid_Traveler(self, m, n, memo = {}):
