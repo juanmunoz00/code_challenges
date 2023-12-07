@@ -24,8 +24,12 @@ if ( runChallenge == Challenges.GRID_TRAVELER ):
   #n = 2
 
   # returns 6
-  m = 3
-  n = 3
+  #m = 3
+  #n = 3
+
+  # returns 2333606220
+  m = 18
+  n = 18
   
   print(f'{ Challenges.Grid_Traveler(m, n) }')
 

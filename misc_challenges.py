@@ -27,14 +27,17 @@ class Challenges:
 
   ## Grid Traverse
   ## How many ways are to reach from top left corner to bottom right corner
-  def Grid_Traveler(self, m, n):
+  def Grid_Traveler(self, m, n, memo = {}):
     try:
+      key = str(m) + ',' + str(n)
       # Base cases
+      if ( key in memo ): return memo[key]
       if (m == 1 and n == 1): return 1
       if (m == 0 or n == 0): return 0
 
       # Recursive case
-      travel = self.Grid_Traveler(m - 1, n) + self.Grid_Traveler(m, n-1)
+      travel = self.Grid_Traveler(m - 1, n, memo) + self.Grid_Traveler(m, n-1, memo)
+      memo[key] = travel
       return travel   
 
     except Exception as e: print(e)
