@@ -15,6 +15,7 @@ class Challenges:
   LEETCODE_3SUM = 8
   DYNAMIC_PROGRAMMIG_1 = 9
   DY_PO_RECURSIVE_FIBONACCI = 10
+  GRID_TRAVELER = 11
   
   USE_ITERATIVE = 1
   USE_RECURSSION = 2
@@ -23,6 +24,23 @@ class Challenges:
   FIBONACCI_SEQUENCE = 2   
   
   ## Methods
+
+  ## Grid Traverse
+  ## How many ways are to reach from top left corner to bottom right corner
+  def Grid_Traveler(self, m, n):
+    try:
+      # Base cases
+      if (m == 1 and n == 1): return 1
+      if (m == 0 or n == 0): return 0
+
+      # Recursive case
+      travel = self.Grid_Traveler(m - 1, n) + self.Grid_Traveler(m, n-1)
+      return travel   
+
+    except Exception as e: print(e)
+
+
+  
   ## Fib2 - Another approach to Fibbonacci using recursion
   def DyPo_Fib(self, n, memo = {}):
     try:
@@ -32,7 +50,7 @@ class Challenges:
         
       if ( n <= 2 ): return 1
       
-      fib = self.DyPo_Fib(n - 1) + self.DyPo_Fib(n - 2)  
+      fib = self.DyPo_Fib(n - 1, memo) + self.DyPo_Fib(n - 2, memo)  
       memo[n] = fib
       
       #print (f'Fib({n}) = {fib}') 
@@ -106,7 +124,7 @@ class Challenges:
           
     except Exception as e: print(e)
   
-  # SortHalfList
+  ## SortHalfList
   def Sort_Half_List(self, list, pivotNumber):
     try:
       leftSortedList = []
