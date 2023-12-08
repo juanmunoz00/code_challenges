@@ -40,9 +40,11 @@ class Challenges:
         remainder = targetSum - n
         reminderResult = self.howSum(remainder, numbers, memo)
         if ( reminderResult != None ):
-          return [reminderResult, n]
+          memo[targetSum] = [reminderResult, n]
+          return memo[targetSum]
       
-      return None
+      memo[targetSum] = None
+      return memo[targetSum]
     except Exception as e: 
       print(e)
       return False

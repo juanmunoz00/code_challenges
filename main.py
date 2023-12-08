@@ -10,10 +10,25 @@ Challenges = Challenges()  # Create an instance of the Challenges class.
 runChallenge = Challenges.HOW_SUM
 ## HOW_SUM
 if ( runChallenge == Challenges.HOW_SUM ):
+  """
+  m = target sum
+  n = number of elements
+
+  Brute Force:
+    time: O(n^m * m)
+    space: O(m)
+
+  Memoized:
+    time: O(n*m^2)
+    space: O(m^2)
+  """
   numbers = [7,14]#[2,3,5]#[2,4]#[5,3,4,7]
   targetSum = 300#8#7
-  
-  print(f'The number: {targetSum} can be added with { Challenges.howSum(targetSum, numbers) } in numbers: {numbers} ')
+
+  if( Challenges.howSum(targetSum, numbers) == None ):
+    print(f'No solution found for {targetSum} using {numbers}')
+  else:
+    print(f'The number: {targetSum} can be added with { Challenges.howSum(targetSum, numbers) } in numbers: {numbers} ')
 
 ## CAN_SUM
 if ( runChallenge == Challenges.CAN_SUM ):
