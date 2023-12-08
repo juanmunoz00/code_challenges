@@ -1,6 +1,25 @@
 """
+#11 Dynamic Programming 3
+Last update: Dic - 07 - 2023
+
+DS/Algo: Dynamic Programming
+
+Description:
+Write a function `howSum(targetSum, numbers)` that takes in a targetSum and an array of numbers
+as arguments.
+
+The function should return an array containing any combination of elements that add up exactly the targetSum.
+
+If there's no combination return null.
+
+If there are multiple combinations possible return any single one.
+
+Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges
+https://www.youtube.com/watch?v=oBt53YbR9Kk&t=2918s
+
+"""
 #10 Dynamic Programming 2
-Last update: Oct - 26 - 2023
+Last update: Dic - 07 - 2023
 
 DS/Algo: Dynamic Programming
 

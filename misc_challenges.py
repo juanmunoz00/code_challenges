@@ -17,6 +17,7 @@ class Challenges:
   DY_PO_RECURSIVE_FIBONACCI = 10
   GRID_TRAVELER = 11
   CAN_SUM = 12
+  HOW_SUM = 13
   
   USE_ITERATIVE = 1
   USE_RECURSSION = 2
@@ -25,7 +26,26 @@ class Challenges:
   FIBONACCI_SEQUENCE = 2   
   
   ## Methods
+  ## howSum
+  """
+  A funtion that returns an array of combinations that add up to a targetSum
+  """
+  def howSum(self, targetSum, numbers, memo = {}):
+    try:
+      if ( targetSum in memo ): return memo[targetSum]
+      if (targetSum == 0): return []
+      if (targetSum < 0): return None
 
+      for n in numbers:
+        remainder = targetSum - n
+        reminderResult = self.howSum(remainder, numbers, memo)
+        if ( reminderResult != None ):
+          return [reminderResult, n]
+      
+      return None
+    except Exception as e: 
+      print(e)
+      return False
   ## canSum
   """
   A function that returns a boolean indicating whether or not it is possible to generate the targetSum
@@ -33,16 +53,17 @@ class Challenges:
   """
   def canSum(self, targetSum, numbers, memo = {}):
     try:
+      if ( targetSum in memo ): return memo[targetSum]
       if (targetSum == 0): return True
       if (targetSum < 0): return False
 
       for n in numbers:
         remainder = targetSum - n
-        if ( remainder in memo ): pass
-        else:
-          memo[remainder] = remainder
-          if ( self.canSum(remainder, numbers, memo)== True ): return True
+        if ( self.canSum(remainder, numbers, memo) == True ): 
+          memo[targetSum] = True
+          return True
  
+      memo[targetSum] = False
       return False
     except Exception as e: 
       print(e)

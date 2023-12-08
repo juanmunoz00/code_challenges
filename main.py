@@ -7,7 +7,13 @@ from tools import Tools
 
 Challenges = Challenges()  # Create an instance of the Challenges class.
 
-runChallenge = Challenges.CAN_SUM
+runChallenge = Challenges.HOW_SUM
+## HOW_SUM
+if ( runChallenge == Challenges.HOW_SUM ):
+  numbers = [7,14]#[2,3,5]#[2,4]#[5,3,4,7]
+  targetSum = 300#8#7
+  
+  print(f'The number: {targetSum} can be added with { Challenges.howSum(targetSum, numbers) } in numbers: {numbers} ')
 
 ## CAN_SUM
 if ( runChallenge == Challenges.CAN_SUM ):
