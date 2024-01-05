@@ -20,7 +20,8 @@ class Tools:
         level[node] = -1
 
       #source node
-      s = "A"
+      root = "A"
+      s = root
       visited[s] = True
       level[s] = 0
       queue.put(s)
@@ -46,6 +47,20 @@ class Tools:
             queue.put(v) # v will now be added to the queue so it can be traversed.
         
       ic(bfs_traversal_output)
+      print(f'Shortest distance (verices) from root: { ic(level) }')
+
+      # Shortest distance to any node from the root
+      _v = "G" # Node that needs to be traveled to
+      v = _v #"G" 
+      path = [] # Path of the nodes to get to `v`
+      while v is not None:
+        path.append(v) # Adding the path traversed.
+        v = parent[v] # The node that was obtained from the queue that has not been visited.
+
+      path.reverse() # Reverse the path list to get the shortest path from the root to the destination.
+      #ic(path)
+      print(f'Shortest path from root to: {_v}  { ic(path) }')
+        
     
     except Exception as e: print(e)
 
