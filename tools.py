@@ -19,11 +19,33 @@ class Tools:
         parent[node] = None
         level[node] = -1
 
+      #source node
+      s = "A"
+      visited[s] = True
+      level[s] = 0
+      queue.put(s)
+
+      """
       ic(visited)
       ic(parent)
       ic(level)
-      
+      ic(queue)
+      """
 
+      # Loop until the queue is empty
+      while not queue.empty():
+        u = queue.get() # The next-first element in the queue which represent a vertex
+        bfs_traversal_output.append(u) # How the graph has been traversed
+
+        for v in adj_list[u]: # Iterate through all the adjacent vertices of the current vertex
+          # Check if the adjacent vertex has not been visited. If not, mark it as visited and enqueue it.
+          if not visited[v]:
+            visited[v] = True
+            parent[v] = u # u is the node that was obtained from the queue that has not been visited.
+            level[v] = level[u] + 1 # The distance between the source node and the adjacent node.
+            queue.put(v) # v will now be added to the queue so it can be traversed.
+        
+      ic(bfs_traversal_output)
     
     except Exception as e: print(e)
 
