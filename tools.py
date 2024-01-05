@@ -1,4 +1,33 @@
+from icecream import ic
+from collections import deque
+from queue import Queue
+
 class Tools:
+  # Based on YT tutorial 2.1 BFS: Breadth First Search Implementation in Python | Graph Data Structure of Apr 6, 2020
+  def BFS(self, adj_list):
+
+    try:
+      visited = {} #visited nodes
+      level = {} #distance
+      parent = {} #to keep the minimum distance
+      bfs_traversal_output = []
+      queue = Queue() #queue for BFS
+
+      #initialze
+      for node in adj_list.keys():
+        visited[node] = False
+        parent[node] = None
+        level[node] = -1
+
+      ic(visited)
+      ic(parent)
+      ic(level)
+      
+
+    
+    except Exception as e: print(e)
+
+  
   def reverse_string(self, string):
     if not isinstance(string, str):
       return "Input is not a string"

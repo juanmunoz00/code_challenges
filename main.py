@@ -6,8 +6,49 @@ from misc_challenges import Challenges
 from tools import Tools
 
 Challenges = Challenges()  # Create an instance of the Challenges class.
+Tools = Tools()  # Create an instance of the Tools class.
 
-runChallenge = Challenges.HOW_SUM
+runChallenge = Challenges.BASIC_GRAPH_TRAVERSE_USING_BFS
+
+if ( runChallenge == Challenges.BASIC_GRAPH_TRAVERSE_USING_BFS ):
+  adj_list = {
+    "A":["B", "D"],
+    "B":["A", "C"],
+    "C":["B"],
+    "D":["A", "E", "F"],
+    "E":["D", "F", "G"],
+    "F":["D", "E", "H"],
+    "G":["E", "H"],
+    "H":["G", "F"]
+  }
+
+  Tools.BFS(adj_list)
+
+if ( runChallenge == Challenges.SOLVE_MAZE_WITH_BFS ):
+  maze = [
+    [0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0, 0]
+  ]
+  
+  # Start and exit points
+  start_point = (0, 0)
+  exit_point = (4, 5)
+  
+  # Call BFS function
+  Challenges.SolveMazeWithBFS(maze, start_point, exit_point)
+
+"""
+## THREESUMGRAPHTRAVERSE
+if ( runChallenge == Challenges.THREESUMGRAPHTRAVERSE):
+  start = True
+  targetSum = 1
+  numbers = [-1,0,1,2,-1,-4]
+  print(f'{Challenges.ThreeSumGraphTraverse(start, targetSum, numbers)}')
+"""
+
 ## HOW_SUM
 if ( runChallenge == Challenges.HOW_SUM ):
   """

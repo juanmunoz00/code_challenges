@@ -1,6 +1,9 @@
 from tools import Tools
 from datetime import datetime
+from icecream import ic
+#import icecream
 import math
+from collections import deque
 
 Tools = Tools() # Create an instance of the Tools class
 
@@ -18,6 +21,9 @@ class Challenges:
   GRID_TRAVELER = 11
   CAN_SUM = 12
   HOW_SUM = 13
+  THREESUMGRAPHTRAVERSE = 14
+  SOLVE_MAZE_WITH_BFS = 15
+  BASIC_GRAPH_TRAVERSE_USING_BFS = 16
   
   USE_ITERATIVE = 1
   USE_RECURSSION = 2
@@ -26,6 +32,95 @@ class Challenges:
   FIBONACCI_SEQUENCE = 2   
   
   ## Methods
+  """
+  Implementing breadth-first search (BFS) for a graph data structure.  
+  """
+  def SolveMazeWithBFS(self, maze, start, exit):
+    try:
+      rows, cols = len(maze), len(maze[0])
+      # Queue for BFS
+      queue = deque([start])
+      # Set to keep track of visited cells
+      visited = set()
+
+      # While there are cells to explore
+      while queue:
+          current_cell = queue.popleft()
+          row, col = current_cell
+          
+          # Check if we reached the exit
+          if current_cell == exit:
+              print("Path found!")
+              
+              return
+  
+          # Check neighbors (up, down, left, right)
+          neighbors = [(row-1, col), (row+1, col), (row, col-1), (row, col+1)]          
+          ic(neighbors)
+          for neighbor in neighbors:
+              n_row, n_col = neighbor
+  
+              # Check if neighbor is within the maze boundaries
+              if 0 <= n_row < rows and 0 <= n_col < cols:
+                  # Check if the neighbor is an open path and not visited
+                  if maze[n_row][n_col] == 0 and neighbor not in visited:
+                      # Enqueue the neighbor and mark it as visited
+                      queue.append(neighbor)
+                      visited.add(neighbor)
+  
+      print("There's no viable path in the maze!")
+      
+    except Exception as e: print(e)
+
+
+  
+  ## ThreeSumGraphTraverse
+  """
+  A function that iven an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] 
+  Input: nums = [-1,0,1,2,-1,-4]
+  Output: [[-1,-1,2],[-1,0,1]]
+
+  Input: nums = [0,1,1]
+  Output: []
+
+  Input: nums = [0,0,0]
+  Output: [[0,0,0]]
+  """
+  def ThreeSumGraphTraverse(self, start, targetSum, numbers, triplets = [], memo = {}):
+    try:
+      if ( start == False):
+        if ( targetSum in memo ): return memo[targetSum]
+        if ( targetSum == 0 ): return triplets
+        if ( targetSum != 0 ): return []
+      else:
+        start == False
+      
+      for i in range(len(numbers) - 2):
+        n = i
+        n1 = numbers[i + 1]
+        n2 = numbers[i + 2]
+
+        if ( (i + 2) <= len(numbers) ):
+          sum = n + n1 + n2
+          _triplets = [n, n1, n2]
+          triplets.append(_triplets)          
+          self.ThreeSumGraphTraverse(start, sum, numbers, triplets, memo = {})
+          memo[targetSum] = triplets
+
+        return triplets
+          
+          
+
+        
+      """
+      for n in numbers:
+        if ( start + 2 <= len(numbers) ):
+          triplets = [n, ]
+          sum = n + (numbers[start + 1]) + (numbers[start + 2])
+      """
+          
+        
+    except Exception as e: print(e)
   ## howSum
   """
   A funtion that returns an array of combinations that add up to a targetSum
