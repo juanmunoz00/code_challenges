@@ -24,6 +24,9 @@ class Challenges:
   THREESUMGRAPHTRAVERSE = 14
   SOLVE_MAZE_WITH_BFS = 15
   BASIC_GRAPH_TRAVERSE_USING_BFS = 16
+  LEETCODE_2SUM_BF = 17
+  LEETCODE_2SUM_RECURSIVE = 18
+  REMOVE_DISIMILAR_ELEMENTS = 19
   
   USE_ITERATIVE = 1
   USE_RECURSSION = 2
@@ -32,6 +35,87 @@ class Challenges:
   FIBONACCI_SEQUENCE = 2   
   
   ## Methods
+  """
+  Amazon SDE assesment on January 2024
+  Given an array of integers of size n, return the minimum possible of elements in the array after the given operation (remove disimilar) perfomred any number of times.
+  # The function is expected to return an INTEGER.
+  # The function accepts INTEGER_ARRAY fruits as parameter.
+  # Algorithm has to run less than 10s.
+
+  Examples:
+  1)
+  arr = [1,2,5,6]
+  Expected output = 0
+  Explaination: All elements are dissimilar, thus, they are all eliminated from the array.
+
+  2)
+  arr = [2,2,2,5,1,2]
+  Expected output = 2 
+  Explaination: From right to left: 2,1,5,2 are dissimilar, thus, they are eliminated from the array leavin only the last 2 "2"s.
+  """
+  def remove_disimilar_elements(self, arr):
+    try:
+      """
+      Asses the n-1 and n-2 elements in the array. If they are equal, return the len of the array. If they are dissimilar, remove them and call back the method.
+      """
+      #ic(len(arr))
+      ic(arr)
+      if ( len(arr) >= 2 ):
+        f1Pos = len(arr)-1
+        f2Pos = len(arr)-2
+        f1 = arr[f1Pos]
+        f2 = arr[f2Pos]
+
+        if f1 == f2:
+          #ic(len(arr))
+          ic(arr)
+          if len(arr) == 0:
+            return 0
+          return len(arr)
+
+        arr.pop(f1Pos)
+        arr.pop(f2Pos)
+
+        #ic(len(arr))
+        if len(arr) == 0:
+          return 0
+        self.remove_disimilar_elements(arr)
+
+      return len(arr)
+      
+    except Exception as e: print(e)
+  
+  
+  """
+  Implementing the solution of leetcode problem 1
+  by using brute force.
+  """
+  def LEETCODE_2SUM_BF(self, nums, target, output_list):
+    try:
+      for i in range(len(nums)):
+        for j in range(i+1, len(nums)):
+          if (nums[i] + nums[j] == target):
+            output_list.append([i, j])
+            
+      return output_list
+      
+    except Exception as e: print(e)
+
+  def LEETCODE_2SUM_RECURSIVE(self, nums, target, i):
+    try:
+      j = i+1
+      if nums[i] + nums[j] == target:
+        output = []
+        output.append(i)
+        output.append(j)
+        
+        return output
+      
+      self.LEETCODE_2SUM_RECURSIVE(nums, target, i + 1)     
+
+    except Exception as e: print(e)
+
+  
   """
   Implementing breadth-first search (BFS) for a graph data structure.  
   """

@@ -1,6 +1,7 @@
 from functools import reduce
 import numpy as np
 import random
+from icecream import ic
 
 from misc_challenges import Challenges
 from tools import Tools
@@ -8,7 +9,35 @@ from tools import Tools
 Challenges = Challenges()  # Create an instance of the Challenges class.
 Tools = Tools()  # Create an instance of the Tools class.
 
-runChallenge = Challenges.BASIC_GRAPH_TRAVERSE_USING_BFS
+runChallenge = Challenges.REMOVE_DISIMILAR_ELEMENTS
+
+if runChallenge == Challenges.REMOVE_DISIMILAR_ELEMENTS:
+  arr1 = [1,2,5,6] #exp: 0
+  arr2 = [2,2,2,5,1,2] #exp: 2
+  arr_3 = [3, 3, 3, 3, 3] #exp: 5
+  arr_4 = [1, 2, 3, 4, 5, 6, 7, 8, 10, 10, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] #exp: 10
+  arr_5 = [1] #exp: 1
+  arr_6 = [] #exp: 0
+  arr = arr_3
+  
+  minimum_possible = Challenges.remove_disimilar_elements(arr)
+
+  if minimum_possible == None: print('No minimum possible')
+  ic(minimum_possible)
+
+if runChallenge == Challenges.LEETCODE_2SUM_RECURSIVE:  
+  nums = [2,7,11,15]
+  target = 9
+  i = 0
+  output = Challenges.LEETCODE_2SUM_RECURSIVE(nums, target, i)
+  ic(output)
+
+if runChallenge == Challenges.LEETCODE_2SUM_BF:
+  nums = [3,3]
+  target = 6
+  output_list = []
+  twoSum = Challenges.LEETCODE_2SUM_BF(nums, target, output_list)
+  ic( twoSum )
 
 if ( runChallenge == Challenges.BASIC_GRAPH_TRAVERSE_USING_BFS ):
   adj_list = {
