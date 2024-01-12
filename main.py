@@ -6,15 +6,25 @@ from icecream import ic
 from misc_challenges import Challenges
 from tools import Tools
 from linked_lists import Nodes
+from linked_lists import LinkedList
 
 Challenges = Challenges()  # Create an instance of the Challenges class.
 Tools = Tools()  # Create an instance of the Tools class.
 
+runChallenge = Challenges.LINKED_LISTS_WITH_METHODS
+
+if runChallenge == Challenges.LINKED_LISTS_WITH_METHODS:
+  linkedList = LinkedList() # Class instantiation
+  linkedList.PrintLinkedList()
+  linkedList.insert("3")
+  linkedList.PrintLinkedList()
+  linkedList.insert("5")
+  linkedList.PrintLinkedList()
+  linkedList.insert("7")
+  linkedList.PrintLinkedList()
 
 
-runChallenge = Challenges.LINKED_LISTS
-
-if runChallenge == Challenges.LINKED_LISTS:
+if runChallenge == Challenges.LINKED_LISTS_SIMPLE:
   try:
     node1 = Nodes("3")
     node2 = Nodes("5")
