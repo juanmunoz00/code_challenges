@@ -5,11 +5,37 @@ from icecream import ic
 
 from misc_challenges import Challenges
 from tools import Tools
+from linked_lists import Nodes
 
 Challenges = Challenges()  # Create an instance of the Challenges class.
 Tools = Tools()  # Create an instance of the Tools class.
 
-runChallenge = Challenges.REMOVE_DISIMILAR_ELEMENTS
+
+
+runChallenge = Challenges.LINKED_LISTS
+
+if runChallenge == Challenges.LINKED_LISTS:
+  try:
+    node1 = Nodes("3")
+    node2 = Nodes("5")
+    node3 = Nodes("7")
+  
+    #Link the lists
+    node1.nextNode = node2
+    node2.nextNode = node3
+  
+    #Print the list
+    currentNode = node1
+    while True:
+      #print(f' { currentNode.value } ->')
+      print( currentNode.value, end = ' -> ')
+      if ( currentNode.nextNode == None ):
+        print("None")
+        break
+        
+      currentNode = currentNode.nextNode
+      
+  except Exception as e: print(e)
 
 if runChallenge == Challenges.REMOVE_DISIMILAR_ELEMENTS:
   arr1 = [1,2,5,6] #exp: 0
